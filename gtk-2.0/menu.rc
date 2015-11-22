@@ -1,0 +1,78 @@
+############################
+#Umbra Shadow Menu Settings#
+############################
+
+style "umbra-menu"
+{
+	xthickness 	= 0
+	ythickness 	= 2
+
+fg[NORMAL] = "#000000"
+fg[PRELIGHT] = "#000000"
+fg[ACTIVE] = "#000000"
+
+bg[NORMAL] = "#d9d9d9"
+bg[PRELIGHT] = "#000000"
+bg[SELECTED] = "#FFFFFF"
+
+text[NORMAL] = "#000000"
+text[PRELIGHT] = "#FFFFFF"
+text[ACTIVE] = "#FFFFFF"
+
+bg_pixmap[NORMAL] = "/menu/menu.png"
+
+
+engine "pixmap"
+{
+		image
+		{
+			function	= BOX
+			state = NORMAL
+			file		= "menu/menu.png"
+			border	= { 0, 0, 0, 0 }
+			stretch	= TRUE
+    		}
+
+		image
+		{
+			function	= BOX
+			state = ACTIVE
+			file		= "menu/menu.png"
+			border	= { 0, 0, 0, 0 }
+			stretch	= TRUE
+    		}
+
+		image
+		{
+			function	= BOX
+			state = INSENSITIVE
+			file		= "menu/menu.png"
+			border	= { 0, 0, 0, 0 }
+			stretch	= TRUE
+    		}
+
+		image
+		{
+			function			= BOX
+			recolorable		= TRUE
+			state = PRELIGHT
+			file		= "menu/menuitem.png"
+			border			= { 0, 0, 0, 0 }
+			stretch			= TRUE
+		}
+}
+
+}
+
+class "GtkMenuItem" 			style "umbra-menu"
+class "GtkMenu" 			style "umbra-menu"
+class "*.GtkMenuItem*"			style "umbra-menu"
+class "GtkTearoffMenuItem"		style "umbra-menu"
+class "GtkRadioMenuItem"		style "umbra-menu"
+class "GtkCheckMenuItem"		style "umbra-menu"
+widget_class "*.<GtkMenuItem>*"		style "umbra-menu"
+widget_class "*.<GtkMenuItem>*"		style "umbra-menu"
+widget_class"*.GtkMenuItem.*"		style:highest "umbra-menu"
+widget_class"*.GtkAccelMenuItem.*"	style:highest "umbra-menu"
+class "GtkMenuItem"			style:highest "umbra-menu"
+class "GtkImageMenuItem"		style:highest "umbra-menu"

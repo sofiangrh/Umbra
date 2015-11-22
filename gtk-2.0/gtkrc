@@ -1,0 +1,632 @@
+###########################################
+#################| Umbra |#################
+##############| Sean Rigney |##############
+###########| Created: 24-1-09 |############
+########|Copyright GPL 2009-2010|##########
+#| Edit Under GNU General Public License |#
+#######| Email: smlymn707@live.com |#######
+###########################################
+
+
+gtk-button-images = 0
+
+gtk-icon-sizes = "panel-menu=20,20\npanel=20,20\ngtk-button=18,18\ngtk-large-toolbar=20,20"
+
+## place a "#" in front of any *.rc file you do not want to use ##
+
+include "panel.rc" 
+
+include "menu.rc"
+
+include "menubar.rc"
+
+include "toolbar.rc"
+
+include "optionmenu.rc"
+
+include "scrollbar.rc"
+
+include "notebook.rc"
+
+include "check-radio.rc"
+
+include "range.rc"
+
+#include "spin.rc"
+
+#include "entry.rc"
+
+style "umbra-pixmap" {
+
+  GtkMenu        ::horizontal_padding   = 0
+  GtkMenu        ::vertical_padding     = 0
+  WnckTasklist   ::fade-overlay-rect 	= 0
+  GtkRange       ::trough_border    	= 0
+  GtkRange       ::slider_width      	= 15
+  GtkRange       ::stepper_size      	= 15
+  GtkPaned       ::handle_size       	= 10
+  GtkToolbar     ::internal-padding  	= 2
+  GtkScrollbar   ::min_slider_length 	= 80
+  GtkMenuBar     ::internal-padding  	= 2
+  GtkExpander    ::expander_size     	= 16
+  GtkScale       ::slider-length     	= 15
+  GtkTreeView    ::expander_size     	= 14
+  GtkWidget	 ::interior_focus	= 1
+  GtkWidget	 ::focus_padding	= 0
+  GtkCheckButton ::indicator_size    	= 12
+  GtkButton      ::child-displacement-x = 0
+  GtkButton      ::child-displacement-y = 0
+  GtkButton      ::default_border    	= { 0, 0, 0, 0 }
+  GtkButton	 ::inner-border 	= { 3, 3, 0, 0 }
+  GtkButton	 ::outside-border	= { 0, 0, 0, 0 }
+  GtkEntry	 ::inner-border		= { 1, 1, 1, 1 }
+  GtkTreeView	 ::odd_row_color     	= @base_color
+  GtkTreeView	 ::even_row_color    	= shade (1.0, @base_color)
+
+  xthickness = 1
+  ythickness = 1
+
+	fg[NORMAL]        = "#000000"
+	fg[ACTIVE]        = "#000000"
+	fg[PRELIGHT]      = "#000000"
+	fg[SELECTED]      = "#FFFFFF"
+	fg[INSENSITIVE]   = "#747474"
+
+	bg[NORMAL]        = "#7b7b7b"
+	bg[PRELIGHT]      = "#7b7b7b"
+	bg[SELECTED]	  = "#7b7b7b"
+	bg[INSENSITIVE]   = "#000000"
+	bg[ACTIVE]        = "#000000"
+
+	base[NORMAL]      = "#ffffff"
+	base[PRELIGHT]    = "#8ac6fa"
+	base[ACTIVE]      = "#8ac6fa"
+	base[SELECTED]    = "#8ac6fa"
+	base[INSENSITIVE] = "#8ac6fa"
+
+	text[NORMAL]      = "#000000"
+	text[PRELIGHT]    = "#ffffff"
+	text[ACTIVE]      = "#ffffff"
+	text[SELECTED]    = "#ffffff"
+	text[INSENSITIVE] = "#000000"
+	engine "pixmap"	
+	{
+
+		image
+		{
+			function	= HANDLE
+			overlay_file	= "Pixmaps/handle-h.png"
+			overlay_stretch	= FALSE
+			orientation	= HORIZONTAL
+		}
+
+		image
+		{
+			function	= HANDLE
+			overlay_file	= "Pixmaps/handle-v.png"
+			overlay_stretch	= FALSE
+			orientation	= VERTICAL
+		}
+
+		image
+		{
+			function	= FOCUS
+			file		= "Pixmaps/null.png"
+			border		= {0,0,0,0}
+			stretch		= TRUE
+		}
+
+		image
+		{
+			function	= VLINE
+			recolorable	= TRUE
+			file		= "Pixmaps/line-v.png"
+			border		= { 1, 1, 0, 0 }
+			stretch		= TRUE
+		}
+
+		image
+		{
+			function	= HLINE
+			recolorable	= TRUE
+			file		= "Pixmaps/line-h.png"
+			border		= { 0, 0, 1, 1 }
+			stretch		= TRUE
+		}
+
+		image
+		{
+			function	 = ARROW
+			recolorable	 = TRUE
+			overlay_file	 = "Arrows/up.png"
+			overlay_border	 = { 0, 0, 0, 0 }
+			overlay_stretch	 = FALSE
+			arrow_direction	 = UP
+		}
+
+		image
+		{
+			function	 = ARROW
+			recolorable	 = TRUE
+			overlay_file	 = "Arrows/down.png"
+			overlay_border 	 = { 0, 0, 0, 0 }
+			overlay_stretch  = FALSE
+			arrow_direction	 = DOWN
+		}
+
+		image
+		{
+			function	 = ARROW
+			recolorable	 = TRUE
+			overlay_file	 = "Arrows/left.png"
+			overlay_border	 = { 0, 0, 0, 0 }
+			overlay_stretch	 = FALSE
+			arrow_direction	 = LEFT
+		}
+
+		image
+		{
+			function	 = ARROW
+			recolorable	 = TRUE
+			overlay_file	 = "Arrows/right.png"
+			overlay_border	 = { 0, 0, 0, 0 }
+			overlay_stretch	 = FALSE
+			arrow_direction	 = RIGHT
+		}
+	}
+}
+
+
+
+# Progressbar
+style "umbra-progressbar"
+{
+  xthickness = 0
+  ythickness = 0
+  bg[NORMAL]   = @tooltip_bg_color
+  bg[PRELIGHT] = @text_color
+  fg[PRELIGHT] = @text_color
+  fg[NORMAL]   = @fg_color
+
+	engine "pixmap"
+	{
+		image
+		{
+
+			function	= BOX
+			recolorable	= TRUE
+			detail		= "trough"
+			file		= "Progressbar/trough-h.png"
+			border		= { 4 , 4 , 2 , 2}
+			stretch		= TRUE
+			orientation	= HORIZONTAL
+		}
+
+		image
+		{
+
+			function	= BOX
+			recolorable	= TRUE
+			detail		= "bar"
+			file		= "Progressbar/progressbar-h.png"
+			border		= { 2 , 2 , 2 , 2}
+			stretch		= TRUE
+			orientation	= HORIZONTAL
+		}
+
+		image
+		{
+
+			function	= BOX
+			recolorable	= TRUE
+			detail		= "trough"
+			file		= "Progressbar/trough-v.png"
+			border		= {2 , 2 ,4 , 4}
+			stretch		= TRUE
+			orientation	= VERTICAL
+		}
+
+		image
+		{
+
+			function	= BOX
+			recolorable	= TRUE
+			detail		= "bar"
+			file		= "Progressbar/progressbar-v.png"
+			border		= { 2 , 2 , 2 ,2}
+			stretch		= TRUE
+			orientation	= VERTICAL
+		}
+	}
+}
+
+# progressbar widgets
+ class "GtkProgressBar"			style:highest "umbra-progressbar"
+ widget_class "*ProgressBar*" 		style:highest "umbra-progressbar"
+ widget_class "*MenuItem.*ProgressBar*" 	style:highest "umbra-progressbar"
+
+style "umbra-wide"
+{
+  xthickness = 2
+  ythickness = 2
+}
+
+style "umbra-wider"
+{
+  xthickness = 3
+  ythickness = 3
+}
+
+style "umbra-button"
+{
+  xthickness = 0
+  ythickness = 3
+
+  bg[NORMAL]        = shade (1.05, @bg_color)
+  bg[INSENSITIVE]   = shade (1.04, @bg_color)
+  bg[PRELIGHT]      = mix(0.60, shade (1.05,@bg_color), @selected_bg_color)
+# bg[PRELIGHT]      = shade (1.08, @bg_color)
+  bg[ACTIVE]        = shade (0.85, @bg_color)
+  text[NORMAL]      = @fg_color
+  text[PRELIGHT]    = @fg_color
+  engine "pixmap" 
+    {
+        
+    image 
+      {
+        function        = BOX
+	recolorable     = TRUE
+	state           = NORMAL
+        detail		= "buttondefault"
+	file            = "buttons/button.png"
+	border          = { 15,15,12,12 }
+	stretch         = TRUE
+      }
+    image 
+      {
+        function        = BOX
+	recolorable     = TRUE
+	state           = NORMAL
+	file            = "buttons/button.png"
+	border          = { 9,9,10,10 }
+#	border          = { 9,9,10,10 }
+	stretch         = TRUE
+      }
+    image 
+      {
+        function        = BOX
+	recolorable     = TRUE
+	state           = PRELIGHT
+	shadow          = OUT
+	file            = "buttons/button-pre.png"
+	border          = { 9,9,10,10 }
+	stretch         = TRUE
+      }
+    image 
+      {
+       function        = BOX
+	recolorable     = TRUE
+	state           = PRELIGHT
+	shadow          = IN
+	file            = "buttons/button-pre.png"
+	border          = { 9,9,10,10 }
+	stretch         = TRUE
+      }
+    image 
+      {
+        function        = BOX
+	recolorable     = TRUE
+	state           = INSENSITIVE
+	file            = "buttons/button.png"
+	border          = { 9,9,10,10 }
+	stretch         = TRUE
+      }
+    image 
+      {
+        function        = BOX
+	recolorable     = TRUE
+	state           = SELECTED
+	file            = "buttons/button-act.png"
+	border          = {9,9,10,10 }
+	stretch         = TRUE
+      }
+    image 
+      {
+        function        = BOX
+	recolorable     = TRUE
+	state           = ACTIVE
+	file            = "buttons/button-act.png"
+	border          = { 9,9,10,10 }
+	stretch         = TRUE
+      }
+   }
+}
+
+
+class "GtkButton"					style "umbra-button"
+
+style "umbra-notebook"
+{
+  xthickness = 2
+  ythickness = 2
+  bg[NORMAL]        = shade (1.04, @bg_color)
+}
+
+style "umbra-tasklist"
+{
+  xthickness = 5
+  ythickness = 3
+}
+
+style "umbra-toolbar"
+{
+  bg[NORMAL]       = shade (1.02, @bg_color)
+}
+
+style "umbra-menu"
+{
+  xthickness = 0
+  ythickness = 0
+  bg[NORMAL] = shade (1.08, @bg_color)
+
+  engine "umbra" {
+    radius = 0.0
+    style  = GUMMY
+  }
+}
+
+style "umbra-menubar-item"
+{
+  xthickness = 2
+  ythickness = 3
+  fg[PRELIGHT] = @selected_fg_color
+  engine "umbra" {
+    radius = 3.0
+    style  = GUMMY
+  }
+}
+                  
+style "umbra-menu-item"
+{
+  xthickness = 2
+  ythickness = 3
+
+	fg[NORMAL]         = @tooltip_fg_color
+	fg[PRELIGHT]	   = @selected_fg_color  
+	text[NORMAL]       = @tooltip_fg_color
+	text[PRELIGHT]     = @selected_fg_color
+	text[SELECTED]     = @selected_fg_color
+	text[ACTIVE]       = @fg_color
+	text[INSENSITIVE]  = darker (@bg_color)
+
+  engine "umbra" {
+    radius = 0.0
+    style  = GUMMY
+  }
+}
+
+style "umbra-radiobutton"
+{
+  text[NORMAL]      = @text_color
+  text[PRELIGHT]    = @text_color
+  text[ACTIVE]      = @selected_fg_color
+  text[SELECTED]    = @selected_fg_color
+  text[INSENSITIVE] = darker (@bg_color)
+}
+
+style "umbra-tree"
+{
+  xthickness = 2
+  ythickness = 1
+}
+
+style "umbra-frame-title"
+{
+  fg[NORMAL] = lighter (@fg_color)
+}
+
+style "umbra-tooltips"
+{
+	xthickness = 4
+	ythickness = 4
+
+	bg[NORMAL] = "#F5F5B5"
+	fg[NORMAL] = "#000000"
+}
+
+style "umbra-progressbar"
+{
+}
+
+style "umbra-scrollbar"
+{
+  engine "umbra" {
+    style  = GUMMY
+  }
+}
+
+style "umbra-combo"
+{
+}
+
+style "umbra-menubar"
+{
+}
+
+style "umbra-scale"
+{
+	GtkRange::trough-side-details = 1
+}	
+
+style "nautilus-location"
+{
+  bg[NORMAL] = mix(0.60, shade (1.05,@bg_color), @selected_bg_color)
+}
+
+style "umbra-combobox-text-color-workaround"
+{
+	text[NORMAL]      = @fg_color
+	text[PRELIGHT]    = @fg_color
+	text[SELECTED]    = @selected_fg_color
+	text[ACTIVE]      = @fg_color
+	text[INSENSITIVE] = darker (@bg_color)
+}
+
+style "umbra-label"
+{
+  engine "umbra" {
+    style  = CLASSIC
+  }
+}
+
+style "umbra-calendar"
+{
+  xthickness = 0
+  ythickness = 0
+  GtkWidget::focus_padding = 0
+
+  fg[NORMAL]        = @text_color
+  bg[NORMAL]        = shade (0.9, @base_color)
+  base[NORMAL]      = @base_color
+  base[ACTIVE]      = shade (1.0, @selected_bg_color)
+  text[ACTIVE]      = @selected_fg_color
+}
+
+style "panel-item-editor"
+{
+  xthickness = 0
+  ythickness = 0
+  bg[NORMAL]        = @bg_color
+  #text[NORMAL]      = @fg_color
+  text[PRELIGHT]    = @fg_color
+
+    bg_pixmap[NORMAL] = "Pixmaps/null.png"
+}
+
+style "panel-menu"
+{
+  fg[NORMAL]		 = "#ffffff"
+  fg[PRELIGHT]	  	 = "#ffffff"
+  bg_pixmap[NORMAL]	 = "Panel/panel-bg-black.png"
+
+	engine "pixmap"	{
+
+		image
+		{
+			function	= BOX
+			recolorable	= TRUE
+			state		= NORMAL
+			file		= "Panel/panel-bg-black.png"
+			border		= { 4, 4, 4, 4 }
+			stretch		= TRUE
+		}
+	}
+}
+widget_class "*Panel*Menu*"	style:highest "panel-menu"
+widget_class "*Panel*MenuBar*"  style:highest "panel-menu"
+widget "PanelDItemEditor"	style "panel-item-editor"
+
+style "umbra"
+{
+
+  engine "clearlooks" 
+  {
+    radius = 2.5
+    menubarstyle      = 2 # 0 = flat, 1 = sunken, 2 = flat gradient
+    toolbarstyle      = 0 # 0 = flat, 1 = enable effects
+    animation         = FALSE
+    #scrollbar_color   = "#D5C8B5"
+    #colorize_scrollbar = TRUE
+    style  = GUMMY
+  }
+}
+
+# widget styles
+class "GtkWidget"	style "umbra-pixmap"
+class "GtkWidget"	style "umbra"
+class "GtkCalendar"	style "umbra-calendar"
+class "GtkStatusbar"	style "umbra-pixmap"
+class "GtkCellView"	style "umbra-button"
+class "GtkScale"	style "umbra-scale"
+class "GtkCombo"	style "umbra-button"
+class "GtkRange"	style "umbra-wide"
+class "GtkFrame"	style "umbra-wide"
+class "GtkSeparator"	style "umbra-wide"
+class "GtkArrow"	style "umbra-wide"
+class "GtkDialog"	style "umbra-wide"
+class "GtkInvisible"	style "umbra-wide"
+class "GtkEntry"	style "umbra-wider"
+class "GtkNotebook"	style "umbra-notebook"
+class "GtkProgressBar"	style "umbra-progressbar"
+class "GtkScrollbar"	style "umbra-scrollbar"
+class "GtkToolbar"	style "umbra-toolbar" 
+widget "gtk-tooltip*"	style "umbra-tooltips"
+widget_class "*Tool*GtkToggleButton" style "umbra-toolbutton"
+widget_class "*Tool*GtkButton" style "umbra-toolbutton"
+
+# radiobutton stuff
+#class "GtkRadioButton"		style:highest "umbra-radiobutton"
+#class "GtkCheckButton"		style:highest "umbra-radiobutton"
+class "GtkCheckMenuItem"	style:highest "umbra-radiobutton"
+class "GtkRadioMenuItem"	style:highest "umbra-radiobutton"
+
+# combobox stuff
+widget_class "*.GtkComboBox.GtkButton"	style "umbra-combo"
+widget_class "*.GtkCombo.GtkButton"	style "umbra-combo"
+widget_class "*.GtkComboBox"		style "umbra-combobox-text-color-workaround"
+
+# treeview stuff
+widget_class "*.GtkTreeView.GtkButton"	style "umbra-tree"
+widget_class "*.GtkCTree.GtkButton"	style "umbra-tree"
+widget_class "*.GtkList.GtkButton"	style "umbra-tree"
+widget_class "*.GtkCList.GtkButton"	style "umbra-tree"
+widget_class "*.GtkFrame.GtkLabel"	style "umbra-frame-title"
+
+# panel stuff
+class "*Panel*"		style "umbra-panel"
+widget "*Panel*"	style "panel-item-editor"
+class "*Panel*Applet*" 	style "umbra-panel"
+widget "*PanelApplet*"	style "umbra-panel"
+widget "*PanelWidget*"	style:highest "umbra-panel"
+
+widget "*fast-user-switch*"		style:highest "umbra-panel"
+widget_class "*.Panel*Button*GtkLabel" 	style "umbra-panel"
+widget_class "*.Panel*GtkLabel" 	style "umbra-panel"
+widget_class "*Netstatus*" 		style "umbra-panel"
+widget_class "*Tomboy*Tray*" 		style "umbra-panel"
+widget_class "*PanelToplevel*" 		style "umbra-panel"
+widget_class "*PanelApplet*" 		style "umbra-panel"
+widget_class "*PanelWidget*" 		style "umbra-panel"
+widget_class "*PanelToplevel*Button" 	style "umbra-panel"
+
+# menu stuff
+class "GtkMenu"				style "umbra-menu"
+class "*.GtkMenuItem*"			style "umbra-menu"
+class "GtkTearoffMenuItem"		style "umbra-menu"
+#class "GtkSeparatorToolItem"		style "umbra-pixmap"
+class "GtkRadioMenuItem"		style "umbra-menu-item"
+class "GtkCheckMenuItem"		style "umbra-menu-item"
+class "GtkSeparatorMenuItem"		style:highest "umbra-pixmap"
+widget_class "*.<GtkMenuItem>*"		style "umbra-menu-item"
+widget_class "*.<GtkMenuItem>*"		style "umbra-umbra"
+widget_class"*.GtkMenuItem.*"		style:highest "umbra-menu-item"
+widget_class"*.GtkAccelMenuItem.*"	style:highest "umbra-menu-item"
+class "GtkMenuItem"			style:highest "umbra-menu-item"
+class "GtkImageMenuItem"		style:highest "umbra-menu-item"
+class "GtkLabel"			style "umbra-notebook"
+class "*Label*"				style:highest "umbra-label"
+widget_class "*Label*"			style:highest "umbra-label"
+
+
+# menubar stuff
+class "GtkMenuBar*"	 		style:highest "umbra-menubar"
+widget_class "*.<GtkMenuBar>.*"		style:highest "umbra-menubar"
+widget_class "*Gimp*GtkMenuBar*"	style "umbra-menubar"
+widget_class "*Nautilus*.GtkMenuBar*"	style "umbra-menubar"
+widget_class "*E*.GtkMenuBar*"		style "umbra-menubar"
+#widget_class "*MenuBar*"		style "menubar-black"
+
+# notebook stuff
+widget_class "*.GtkNotebook.*.GtkEventBox"	style "umbra-notebook"
+widget_class "*.GtkNotebook.*.GtkViewport"	style "umbra-notebook"
+widget "*.nautilus-extra-view-widget"		style:highest "nautilus-location"

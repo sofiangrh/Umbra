@@ -1,0 +1,11 @@
+pixmap_path "~/.themes/Blaze/gtk-2.0/Icons"
+style "glossy-icons"
+{
+
+  stock["gtk-go-back"] = { { "Icons/stock_back.png", *, *, *} }
+#  stock["gtk-go-down"] ={ { "Icons/stock_down.png", *, *, *}}
+  stock["gtk-go-forward"] ={{ "Icons/stock_forward.png", *, *, *}}
+#  stock["gtk-go-up"] ={{ "Icons/stock_up.png", *, *, *}}
+
+}
+class "GtkWidget" style "glossy-icons"

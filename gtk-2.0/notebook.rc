@@ -1,0 +1,162 @@
+style "notebook"
+{
+
+xthickness = 1
+ythickness = 1
+engine "pixmap"
+{
+
+	image
+	{
+		function	= EXTENSION
+		state		= NORMAL
+		gap_side	= BOTTOM
+		file		= "/tabs/tab-top-active.png"
+		stretch		= TRUE
+		border		= { 6 ,6 ,6 ,0}
+	}
+
+	image
+	{
+		function	= EXTENSION
+		state		= ACTIVE
+		gap_side	= BOTTOM
+		file		= "/tabs/tab-top.png"
+		stretch		= TRUE
+		border		= { 8 ,8 ,10 ,0}
+	}
+
+
+
+	image
+	{
+		function	= EXTENSION
+		state		= NORMAL
+		gap_side	= TOP
+		file		= "/tabs/tab-bottom-active.png"
+		stretch		= TRUE
+		border		= { 6 ,6 ,0 ,6}
+	}
+
+	image
+	{
+		function	= EXTENSION
+		state		= ACTIVE
+		gap_side	= TOP
+		file		= "/tabs/tab-bottom.png"
+		stretch		= TRUE
+		border		= { 8 ,8 ,0 ,10}
+	}
+
+	image
+	{
+		function	= EXTENSION
+		state		= NORMAL
+		gap_side	= LEFT
+		file		= "/tabs/tab-right-active.png"
+		stretch		= TRUE
+		border		= { 0 ,6 ,6 ,6}
+	}
+
+	image
+	{
+		function	= EXTENSION
+		state		= ACTIVE
+		gap_side	= LEFT
+		file		= "/tabs/tab-right.png"
+		stretch		= TRUE
+		border		= { 0 ,10 ,8 ,8}
+	}
+
+	image
+	{
+		function	= EXTENSION
+		state		= NORMAL
+		gap_side	= RIGHT
+		file		= "/tabs/tab-left-active.png"
+		stretch		= TRUE
+		border		= { 6 ,0 ,6 ,6}
+	}
+
+	image
+	{
+		function	= EXTENSION
+		state		= ACTIVE
+		gap_side	= RIGHT
+		file		= "/tabs/tab-left.png"
+		stretch		= TRUE
+		border		= { 10 ,0 ,8 ,8}
+	}
+
+	image
+	{
+		function	= BOX_GAP
+		gap_side	= TOP
+		file		= "/tabs/notebook_top_flat.png"
+		stretch		= TRUE
+		border		= { 1 ,1 ,10 ,1}
+		gap_file	= "/tabs/tab-top-active-gap.png"
+		gap_border	= { 1 ,1 ,2 ,1}
+		gap_start_file	= "/tabs/null.png"
+		gap_start_border= { 1 ,1 ,1 ,1}
+		gap_end_file	= "/tabs/null.png"
+		gap_end_border	= { 1 ,1 ,1 ,1}
+		
+	}
+
+	image
+	{
+		function	= BOX_GAP
+		gap_side	= BOTTOM
+		file		= "/tabs/notebook_bottom_flat.png"
+		stretch		= TRUE
+		border		= { 1 ,1 ,1 ,10}
+		gap_file	= "/tabs/tab-bottom-active-gap.png"
+		gap_border	= { 1 ,1 ,1 ,2}
+		gap_start_file	= "/tabs/null.png"
+		gap_start_border= { 1 ,1 ,1 ,1}
+		gap_end_file	= "/tabs/null.png"
+		gap_end_border	= { 1 ,1 ,1 ,1}
+		
+	}
+
+	image
+	{
+		function	= BOX_GAP
+		gap_side	= LEFT
+		file		= "/tabs/notebook_left_flat.png"
+		stretch		= TRUE
+		border		= { 10 ,1 ,1 ,1}
+		gap_file	= "/tabs/tab-left-active-gap.png"
+		gap_border	= { 2 ,1 ,1 ,1}
+		gap_start_file	= "/tabs/null.png"
+		gap_start_border= { 1 ,1 ,1 ,1}
+		gap_end_file	= "/tabs/null.png"
+		gap_end_border	= { 1 ,1 ,1 ,1}
+		
+	}
+
+	image
+	{
+		function	= BOX_GAP
+		gap_side	= RIGHT
+		file		= "/tabs/notebook_right_flat.png"
+		stretch		= TRUE
+		border		= { 1 ,10 ,1 ,1}
+		gap_file	= "/tabs/tab-right-active-gap.png"
+		gap_border	= { 1 ,2 ,1 ,1}
+		gap_start_file	= "/tabs/null.png"
+		gap_start_border= { 1 ,1 ,1 ,1}
+		gap_end_file	= "/tabs/null.png"
+		gap_end_border	= { 1 ,1 ,1 ,1}
+		
+	}
+
+	
+
+}
+}
+
+class "GtkNotebook"    				style "notebook"
+widget_class "*.GtkNotebook.*.GtkEventBox"	style "notebook"
+widget_class "*.GtkNotebook.*.GtkViewport"	style "notebook"

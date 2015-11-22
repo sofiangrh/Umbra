@@ -1,0 +1,184 @@
+########################################
+#Umbra Shadow Blue Check-Radio Settings#
+########################################
+
+style "CheckBox" 
+{
+
+    engine "pixmap" 
+    {
+	#This is the image used to draw an unchecked box.
+        image 
+	{
+            function        		= CHECK
+            recolorable    		= TRUE
+            state 			= NORMAL
+            shadow          		= OUT
+            overlay_file    		= "combo/check.png"
+            overlay_stretch 	= FALSE
+        }
+ image 
+	{
+            function        		= CHECK
+            recolorable     		= TRUE
+            state 				= PRELIGHT
+            shadow          		= OUT
+            overlay_file    		= "combo/check-pre.png"
+            overlay_stretch 	= FALSE
+        }
+ image 
+	{
+            function        		= CHECK
+            recolorable     		= TRUE
+            state 			= ACTIVE
+            shadow          		= OUT
+            overlay_file    		= "combo/check-pre.png"
+            overlay_stretch 	= FALSE
+        }
+ image 
+	{
+            function        		= CHECK
+            recolorable     		= TRUE
+            state 			= INSENSITIVE
+            shadow         		= OUT
+            overlay_file    		= "combo/check-ins.png"
+            overlay_stretch 	= FALSE
+        }
+ #### UNCHECKED ####
+ image 
+	{
+            function        		= CHECK
+            recolorable     		= TRUE
+	    	  state 		= NORMAL
+            shadow          		= IN
+            overlay_file    		= "combo/checked.png"
+            overlay_stretch 	= FALSE
+        }
+  image 
+	{
+            function        		= CHECK
+            recolorable     		= TRUE
+	    	  state 		= PRELIGHT
+            shadow          		= IN
+            overlay_file    		= "combo/checked-pre.png"
+            overlay_stretch 	= FALSE
+        }
+ image 
+	{
+            function        		= CHECK
+            recolorable     		= TRUE
+	    	  state 		= ACTIVE
+            shadow          		= IN
+            overlay_file    		= "combo/checked-pre.png"
+            overlay_stretch 	= FALSE
+        }
+ image 
+	{
+            function        		= CHECK
+            recolorable     		= TRUE
+	   	  state 		= INSENSITIVE
+            shadow          		= IN
+            overlay_file    		= "combo/checked-ins.png"
+            overlay_stretch 	= FALSE
+        }
+
+image 
+	{
+	function			= FLAT_BOX
+	recolorable		= TRUE
+	file					= "menu/hi-light.png"
+	border			= { 1, 1, 1, 1 }
+	stretch			= TRUE
+       }
+	
+    }
+}
+
+class "GtkCheckButton" style "CheckBox"
+
+style "RadioButton" 
+{
+
+    engine "pixmap" 
+    {
+
+	 image 
+	{
+            function        		= OPTION
+            recolorable    		= TRUE
+            state 			= NORMAL
+            shadow          		= OUT
+            overlay_file    		= "combo/radio.png"
+            overlay_border  = { 0, 0, 0, 0 }
+            overlay_stretch 	= FALSE
+        }
+ image 
+	{
+            function        		= OPTION
+            recolorable     		= TRUE
+            state 			= PRELIGHT
+            shadow          		= OUT
+            overlay_file    		= "combo/radio-pre.png"
+            overlay_border  = { 0, 0, 0, 0 }
+            overlay_stretch 	= FALSE
+        }
+ 
+ image 
+	{
+            function        		= OPTION
+            recolorable     		= TRUE
+            state 				= INSENSITIVE
+            shadow         		= OUT
+            overlay_file    		= "combo/radio-ins.png"
+            overlay_border  = { 0, 0, 0, 0 }
+            overlay_stretch 	= FALSE
+        }
+ #### UNCHECKED ####
+ image 
+	{
+            function        		= OPTION
+            recolorable     		= TRUE
+	    state 			= NORMAL
+            shadow          		= IN
+            overlay_file    		= "combo/radio-in.png"
+            overlay_border  = { 0, 0, 0, 0 }
+            overlay_stretch 	= FALSE
+        }
+  image 
+	{
+            function        		= OPTION
+            recolorable     		= TRUE
+	    	  state 		= PRELIGHT
+            shadow          		= IN
+            overlay_file    		= "combo/radio-in-pre.png"
+            overlay_border  = { 0, 0, 0, 0 }
+            overlay_stretch 	= FALSE
+        }
+ 
+ image 
+	{
+            function        		= OPTION
+            recolorable     		= TRUE
+	   	  state 		= INSENSITIVE
+            shadow          		= IN
+            overlay_file    		= "combo/radio-in-ins.png"
+            overlay_border  = { 0, 0, 0, 0 }
+            overlay_stretch 	= FALSE
+        }
+
+image 
+	{
+	function			= FLAT_BOX
+	recolorable		= TRUE
+	file					= "menu/hi-light.png"
+	border			= { 1, 1, 1, 1 }
+	stretch			= TRUE
+       }
+	
+    }
+}
+
+class "GtkRadioButton"		style "RadioButton"
+
+class "GtkCheckMenuItem"	style:highest "umbra-check"
+class "GtkRadioMenuItem"	style:highest "umbra-check"

@@ -1,0 +1,54 @@
+style "umbra-entry"
+{
+  engine "pixmap"
+  {
+    image
+    {
+      function			= FOCUS
+      recolorable		= TRUE
+      file			= "shadows/txt_in.png"
+      border			= { 2,2,2,2 }
+      stretch			= TRUE
+    }	
+ image
+    {
+      function			= BOX
+      recolorable		= TRUE
+	 shadow			= IN
+      state			= NORMAL
+      file			= "shadows/txt_in.png"
+      border			= { 2,2,2,2 }
+      stretch			= TRUE
+    }	
+    image
+    {
+      function			= BOX
+      recolorable		= TRUE
+	 shadow			= OUT
+      state			= NORMAL
+      file			= "shadows/text-entry.png"
+      border			= { 5,5,5,5 }
+      stretch			= TRUE
+    }	
+    image
+    {
+      function			= BOX
+      recolorable		= TRUE
+	 shadow			= OUT
+      state			= PRELIGHT
+      file			= "shadows/text-entry.png"
+      border			= { 5,5,5,5 }
+      stretch			= TRUE
+    }
+  image
+   {
+     function			= SHADOW
+     detail			= "entry"
+     shadow			= IN
+     recolorable		= FALSE
+     file			= "shadows/text-entry.png"
+     border			= { 5,5,5,5 }
+     stretch			= TRUE
+    }
+
+class "GtkEntry"	style "umbra-entry"

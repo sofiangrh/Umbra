@@ -1,0 +1,99 @@
+#######################
+###  #############  ###
+##   Glass Toolbar   ##
+###  #############  ###
+#######################
+
+style "toolbuttons"
+{
+  xthickness            			= 0
+  ythickness            			= 0
+
+	fg[NORMAL]        = "#ffffff"
+	fg[PRELIGHT]      = "#ffffff"
+	fg[SELECTED]      = "#ffffff"
+	fg[ACTIVE]        = "#ffffff"
+	fg[INSENSITIVE]   = "#ffffff"
+
+
+	engine "pixmap" {
+      
+image
+		{
+			function        			= BOX
+			recolorable     			= TRUE
+			state					= NORMAL
+			file            			= "toolbar/toolbutton.png"
+			border          			= { 5, 5, 5, 5 }
+			stretch         			= TRUE
+		}
+		
+image
+		{
+			function        			= BOX
+			shadow					= OUT
+			state					= PRELIGHT
+			file            			= "toolbar/toolbutton-pre-1.png"
+			border          			= { 5, 5, 5, 5 }
+			stretch         			= TRUE
+		}
+
+image
+		{
+			function        			= BOX
+			shadow					= IN
+			state					= PRELIGHT
+			file            			= "toolbar/toolbutton-act-pre.png"
+			border          			= { 6, 6, 6, 6 }
+			stretch         			= TRUE
+		}
+
+image
+		{
+			function        			= BOX
+			recolorable     			= TRUE
+			state					= ACTIVE
+			file            			= "toolbar/toolbutton-act.png"
+			border          			= { 5, 5, 5, 5 }
+			stretch         			= TRUE
+		}  
+image
+		{
+			function        			= BOX
+			recolorable     			= TRUE
+			state					= INSENSITIVE
+			file            			= "toolbar/toolbutton.png"
+			border          			= { 5, 5, 5, 5 }
+			stretch         			= TRUE
+		}  
+
+	}
+
+}
+widget_class "*Tool*GtkToggleButton"	style "toolbuttons"
+widget_class "*Tool*GtkButton"		style "toolbuttons"
+
+style "blaze-toolbar"
+{
+	xthickness = 2
+	ythickness = 4
+
+fg[PRELIGHT] = "#FFFFFF"
+
+	engine "pixmap"
+	{
+	image
+	{
+	  	function = BOX
+		recolorable = TRUE
+		shadow = OUT
+		file = "toolbar/toolbar.png"
+		border = {0,0,0,0}
+		stretch = TRUE
+	}
+
+ 	}
+}
+
+widget_class "GtkToolBar" style "blaze-toolbar"
+class "*Tool*" style "blaze-toolbar"

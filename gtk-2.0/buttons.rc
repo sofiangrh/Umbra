@@ -1,0 +1,83 @@
+style "umbra-button""
+{
+
+  GtkButton::default_border = { 0, 0, 0, 0 }
+  #GtkButton::default_outside_border = { 0, 0, 0, 0 }
+
+  xthickness=2
+  #ythickness=2
+  engine "pixmap" 
+    {
+        
+    image 
+      {
+        function        = BOX
+	recolorable     = TRUE
+	state           = NORMAL
+        detail		= "buttondefault"
+	file            = "buttons/button.png"
+	border          = { 15,15,12,12 }
+	stretch         = TRUE
+      }
+    image 
+      {
+        function        = BOX
+	recolorable     = TRUE
+	state           = NORMAL
+	file            = "buttons/button.png"
+	border          = { 9,9,10,10 }
+#	border          = { 9,9,10,10 }
+	stretch         = TRUE
+      }
+    image 
+      {
+        function        = BOX
+	recolorable     = TRUE
+	state           = PRELIGHT
+	shadow          = OUT
+	file            = "buttons/button-pre.png"
+	border          = { 9,9,10,10 }
+	stretch         = TRUE
+      }
+    image 
+      {
+       function        = BOX
+	recolorable     = TRUE
+	state           = PRELIGHT
+	shadow          = IN
+	file            = "buttons/button-pre.png"
+	border          = { 9,9,10,10 }
+	stretch         = TRUE
+      }
+    image 
+      {
+        function        = BOX
+	recolorable     = TRUE
+	state           = INSENSITIVE
+	file            = "buttons/button.png"
+	border          = { 9,9,10,10 }
+	stretch         = TRUE
+      }
+    image 
+      {
+        function        = BOX
+	recolorable     = TRUE
+	state           = SELECTED
+	file            = "buttons/button-act.png"
+	border          = {9,9,10,10 }
+	stretch         = TRUE
+      }
+    image 
+      {
+        function        = BOX
+	recolorable     = TRUE
+	state           = ACTIVE
+	file            = "buttons/button-act.png"
+	border          = { 9,9,10,10 }
+	stretch         = TRUE
+      }
+   }
+}
+
+
+class "GtkButton"					style "umbra-button"

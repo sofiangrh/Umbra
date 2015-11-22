@@ -1,0 +1,127 @@
+style "umbra-spin"
+{
+
+engine "pixmap"
+{
+	image
+	{
+		function	= ARROW
+	}
+
+	image
+	{
+		function	= BOX
+		state		= NORMAL
+		detail		= "spinbutton_up"
+		recolorable	= TRUE
+		file		= "spin/spin-up.png"
+		border		= { 3 , 3 , 3 , 3 }
+		stretch		= TRUE
+		overlay_file	= "spin/arrow-up.png"
+		overlay_stretch	= FALSE
+		overlay_border	= { 0 , 0 , 0 , 0 }
+	}
+
+	image
+	{
+		function	= BOX
+		state		= PRELIGHT
+		detail		= "spinbutton_up"
+		recolorable	= TRUE
+		file		= "spin/spin-up.png"
+		border		= { 3 , 3 , 3 , 3 }
+		stretch		= TRUE
+		overlay_file	= "spin/arrow-up-prelight.png"
+		overlay_stretch	= FALSE
+		overlay_border	= { 0 , 0 , 0 , 0 }
+	}
+
+	image
+	{
+		function	= BOX
+		state		= ACTIVE
+		detail		= "spinbutton_up"
+		recolorable	= TRUE
+		file		= "spin/spin-up.png"
+		border		= { 3 , 3 , 3 , 3 }
+		stretch		= TRUE
+		overlay_file	= "spin/arrow-up-prelight.png"
+		overlay_stretch	= FALSE
+		overlay_border	= { 0 , 0 , 0 , 0 }
+	}
+
+	image
+	{
+		function	= BOX
+		state		= INSENSITIVE
+		detail		= "spinbutton_up"
+		recolorable	= TRUE
+		file		= "spin/spin-up.png"
+		border		= { 3 , 3 , 3 , 3 }
+		stretch		= TRUE
+		overlay_file	= "spin/arrow-up-insensitive.png"
+		overlay_stretch	= FALSE
+		overlay_border	= { 0 , 0 , 0 , 0 }
+	}
+
+
+
+	image
+	{
+		function	= BOX
+		state		= NORMAL
+		detail		= "spinbutton_down"
+		recolorable	= TRUE
+		file		= "spin/spin-down.png"
+		border		= { 5 , 5 , 5 , 5}
+		stretch		= TRUE
+		overlay_file	= "spin/arrow-down.png"
+		overlay_stretch	= FALSE
+		overlay_border	= { 0 , 0 , 0 , 0 }
+	}
+
+	image
+	{
+		function	= BOX
+		state		= PRELIGHT
+		detail		= "spinbutton_down"
+		recolorable	= TRUE
+		file		= "spin/spin-down.png"
+		border		= { 5 , 5 , 5 , 5}
+		stretch		= TRUE
+		overlay_file	= "spin/arrow-down-prelight.png"
+		overlay_stretch	= FALSE
+		overlay_border	= { 0 , 0 , 0 , 0 }
+	}
+
+	image
+	{
+		function	= BOX
+		state		= ACTIVE
+		detail		= "spinbutton_down"
+		recolorable	= TRUE
+		file		= "spin/spin-down.png"
+		border		= { 0 , 0 , 0 , 0 }
+		stretch		= TRUE
+		overlay_file	= "spin/arrow-down-prelight.png"
+		overlay_stretch	= FALSE
+		overlay_border	= { 0 , 0 , 0 , 0 }
+	}
+
+	image
+	{
+		function	= BOX
+		state		= INSENSITIVE
+		detail		= "spinbutton_down"
+		recolorable	= TRUE
+		file		= "spin/spin-down.png"
+		border		= { 0 , 0 , 0 , 0 }
+		stretch		= TRUE
+		overlay_file	= "spin/arrow-down-insensitive.png"
+		overlay_stretch	= FALSE
+		overlay_border	= { 0 , 0 , 0 , 0 }
+	}
+    }
+}
+
+widget_class "*SpinButton*"	style "umbra-spin"

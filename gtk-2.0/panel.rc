@@ -1,0 +1,187 @@
+############################
+#Umbra Glass Panel Settings#
+############################
+
+
+style "blaze-panel"
+{
+xthickness = 0
+ythickness = 0
+	fg[NORMAL]        = "#ffffff"
+	fg[PRELIGHT]      = "#ffffff"
+	fg[SELECTED]      = "#ffffff"
+	fg[ACTIVE]        = "#ffffff"
+	fg[INSENSITIVE]   = "#ffffff"
+bg_pixmap[NORMAL] = "panel/panel.png"
+}
+
+class "*Panel*" style "blaze-panel"
+
+style "panelbar"
+{
+xthickness = 0
+ythickness = 0
+	fg[NORMAL]        = "#ffffff"
+	fg[PRELIGHT]      = "#ffffff"
+	fg[SELECTED]      = "#ffffff"
+	fg[ACTIVE]        = "#ffffff"
+	fg[INSENSITIVE]   = "#ffffff"
+
+engine "pixmap"
+{
+	image
+	{
+		function	= BOX
+		state		= NORMAL
+		file		= "panel/panel.png"
+		border		= { 13, 13 , 13 , 13}
+		stretch		= TRUE
+	}
+
+	
+	image
+	{
+		function	= BOX
+		state		= ACTIVE
+		file		= "panel/panel.png"
+		border		= { 0 , 0 , 0 , 0}
+		stretch		= FALSE
+	}
+
+	
+	image
+	{
+		function	= BOX
+		state		= INSENSITIVE
+		file		= "panel/panel.png"
+		border		= { 0 , 0 , 0 , 0}
+		stretch		= FALSE
+	}
+
+	
+	image
+	{
+		function	= BOX
+		state		= PRELIGHT
+		recolorable	= TRUE
+		file		= "menubar/menubar-item.png"
+		border		= { 0 , 0 , 0 , 0}
+		stretch		= TRUE
+
+	}
+
+}
+
+}
+
+class "*Panel*MenuBar*"		style "panelbar"
+widget_class "*Panel*MenuBar*" style "panelbar"
+widget_class "*Panel*MenuBar*Item*" style:highest "panelbar"
+
+#############################################################
+#THESE DECLARATIONS MAKE SURE THE LAUNCHER EDITOR BUTTONS USE 
+#STANDARD BUTTONS STYLE AND NOT PANEL BUTTONS STYLE
+#############################################################
+
+#############################################################
+
+style "panelbuttons"
+{
+ xthickness            			= 2
+ ythickness            			= 2
+
+  	bg[SELECTED]			= "#3d3d3d"
+	fg[NORMAL]        = "#ffffff"
+	fg[PRELIGHT]      = "#ffffff"
+	fg[SELECTED]      = "#ffffff"
+	fg[ACTIVE]        = "#ffffff"
+	fg[INSENSITIVE]   = "#ffffff"
+
+
+	engine "pixmap" {
+
+#does anyone have a clue on how to rid the "flashy" effect when for example someone
+#writes to you on pidgin?????? to replace that effect with a pixmap would be great!
+
+	image
+	{
+		function        		= BOX
+		recolorable     		= TRUE
+		state				= NORMAL
+		file            		= "panel/button.png"
+		border          		= { 8, 8, 8,8 }
+		stretch         		= TRUE
+	}
+		
+	image
+	{
+		function        		= BOX
+		shadow				= OUT
+		recolorable     		= TRUE
+		state				= PRELIGHT
+		file            		= "panel/button-pre.png"
+		border          		= { 8, 8, 8,8 }
+		stretch         		= TRUE
+	}		
+
+	image
+	{
+		function        		= BOX
+		recolorable     		= TRUE
+		shadow				= IN
+		state				= PRELIGHT
+		file            		= "panel/button-act-pre.png"
+		border          		= { 8, 8, 8,8 }
+		stretch         		= TRUE
+	}
+		
+
+	image
+	{
+		function        		= BOX
+		recolorable     		= TRUE
+		state				= ACTIVE
+		file            		= "panel/button-act.png"
+		border          		= { 8, 8, 8,8 }
+		stretch         		= TRUE
+	}  
+
+	image
+	{
+		function        		= BOX
+		recolorable     		= TRUE
+		state				= INSENSITIVE
+		file            		= "panel/button-ins.png"
+		border          		= { 8, 8, 8,8 }
+		stretch         		= TRUE
+	} 
+
+	image
+	{
+		function        		= BOX
+		recolorable     		= TRUE
+		state				= SELECTED
+		file            		= "panel/button-act.png"
+		border          		= { 8, 8, 8,8 }
+		stretch         		= TRUE
+	}  
+
+}
+
+}
+
+
+
+widget_class "*Tasklist*" 		style:highest "panelbuttons"
+
+widget_class "*Xfce*Panel*.GtkToggleButton" 	style "panelbuttons"
+widget_class "*Xfce*NetkTasklist*GtkToggleButton" style "panelbuttons"
+widget_class "*Panel*.GtkToggleButton" 		style "panelbuttons"
+widget_class "*Panel*Applet*Select*"	style "panelbuttons"
+widget 	"*dict*Applet*"			style "panelbuttons"
+widget_class "*Panel*Applet*Button*"			style "panelbuttons"
+widget_class "*Panel*GtkToggleButton" 	style "panelbuttons"
+widget_class "*Panel*GtkButton" 	style "panelbuttons"
+widget_class "*.Panel*Button*GtkLabel" 	style "panelbuttons"
+widget_class "*.Panel*GtkLabel" 	style "panelbuttons"
+

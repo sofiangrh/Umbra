@@ -1,0 +1,298 @@
+####################
+# Umbra OptionMenu #
+####################
+
+style "OptionMenu" 
+{
+
+  fg[NORMAL] = "#262729"
+  text[NORMAL] = "#262729"
+  text[PRELIGHT] = "#262729"
+  fg[PRELIGHT] = "#262729"
+
+    engine "pixmap" 
+   {
+	
+
+    image
+    {
+      function			= BOX
+      state			= PRELIGHT
+      shadow			= OUT
+      file			= "buttons/button-pre.png"
+      border			= { 4, 4, 4, 4 }
+      stretch			= TRUE
+    }
+
+    image
+    {
+      function			= BOX
+      state			= PRELIGHT
+      shadow			= IN
+      file			= "buttons/button-act-pre.png"
+      border			= { 4, 4, 4, 4 }
+      stretch			= TRUE
+    }
+
+    image
+    {
+      function			= BOX
+      state			= ACTIVE
+      file			= "buttons/button-act.png"
+      border			= { 4, 4, 4, 4 }
+      stretch			= TRUE
+    }	
+    image 
+   {
+     function			= BOX
+     state			= INSENSITIVE
+     file			= "buttons/button-ins.png"
+     border			= { 4, 4, 4, 4 }
+     stretch			= TRUE
+    }
+    image 
+    {
+      function			= BOX
+      file			= "buttons/button.png"		
+      border			= { 4, 4, 4, 4 }
+      stretch			= TRUE
+    }	
+    image
+    {
+      function			= TAB
+      state			= INSENSITIVE
+      recolorable		= TRUE
+      overlay_file		= "arrows/up_down-ins.png"
+      overlay_stretch		= FALSE
+    }
+    image
+    {
+      function				= TAB
+      recolorable			= TRUE
+      state				= NORMAL
+      overlay_file			= "arrows/up_down-option.png"
+      overlay_stretch			= FALSE
+    }
+
+image
+    {
+      function				= TAB
+      recolorable			= TRUE
+      state				= SELECTED
+      overlay_file			= "arrows/up_down-act.png"
+      overlay_stretch			= FALSE
+    }
+
+  image
+    {
+      function				= TAB
+      recolorable			= TRUE
+      state				= PRELIGHT
+      overlay_file			= "arrows/up_down-pre-option.png"
+      overlay_stretch			= FALSE
+    }
+
+image
+    {
+      function			= VLINE
+      recolorable		= TRUE
+      file				= "lines/vline.png"
+      border			= { 1, 1, 1, 1 }
+      stretch			= TRUE
+    }
+image
+    {
+      function			= ARROW
+      arrow_direction           = DOWN
+      state				= INSENSITIVE
+      recolorable		= TRUE
+      overlay_file		= "arrows/down_insensitive.png"
+      overlay_stretch	= FALSE
+    }
+    image
+    {
+      function				= ARROW
+      recolorable			= TRUE
+      state					= NORMAL
+      overlay_file			= "arrows/down.png"
+      overlay_border	= { 0, 0, 0, 0 }
+      overlay_stretch	= FALSE
+      arrow_direction = DOWN
+    }
+  image
+    {
+      function				= ARROW
+      arrow_direction = DOWN
+      recolorable			= TRUE
+      state					= PRELIGHT
+      overlay_file			= "arrows/down_prelight.png"
+      overlay_border	= { 0, 0, 0, 0 }
+      overlay_stretch	= FALSE
+    }
+   
+   }
+}
+
+class "GtkOptionMenu" style "OptionMenu"
+widget_class "*Combo*" style "OptionMenu"
+
+style "comboentry"			
+{
+
+#  xthickness            			= 2
+#  ythickness            			= 2
+
+  GtkWidget::interior_focus	= 0 
+
+  base[NORMAL] = "#ffffff"
+  text[INSENSITIVE] = "#aaaaaa"
+
+  engine "pixmap"
+  {
+    image
+    {
+      function			= FOCUS
+      recolorable		= TRUE
+      file			= "shadows/txt_in.png"
+      border			= { 2,2,2,2 }
+      stretch			= TRUE
+    }	
+ image
+    {
+      function			= BOX
+      recolorable		= TRUE
+	 shadow			= IN
+      state			= NORMAL
+      file			= "shadows/txt_in.png"
+      border			= { 2,2,2,2 }
+      stretch			= TRUE
+    }	
+    image
+    {
+      function			= BOX
+      recolorable		= TRUE
+	 shadow			= OUT
+      state			= NORMAL
+      file			= "shadows/text-entry.png"
+      border			= { 5,5,5,5 }
+      stretch			= TRUE
+    }	
+    image
+    {
+      function			= BOX
+      recolorable		= TRUE
+	 shadow			= OUT
+      state			= PRELIGHT
+      file			= "shadows/text-entry.png"
+      border			= { 5,5,5,5 }
+      stretch			= TRUE
+    }
+  image
+   {
+     function			= SHADOW
+     detail			= "entry"
+     shadow			= IN
+     recolorable		= FALSE
+     file			= "shadows/text-entry.png"
+     border			= { 5,5,5,5 }
+     stretch			= TRUE
+    }
+  }
+}
+
+style "combobutton"		
+{
+
+  engine "pixmap"
+  {
+    image
+    {
+      function			= BOX
+      detail				= "buttondefault"
+      recolorable		= TRUE
+      file				= "buttons/button.png"
+      border			= {10, 10, 9, 9}
+      stretch			= TRUE
+    }
+    image
+    {
+      function			= BOX
+      state				= PRELIGHT
+      recolorable		= TRUE
+      file				= "buttons/button-pre.png"
+      border			= { 10, 10, 9, 9 }
+      stretch			= TRUE
+    }
+    image
+    {
+      function			= BOX
+      state			= ACTIVE
+      file			= "buttons/button.png"
+      border			= { 10, 10, 9, 9 }
+      stretch			= TRUE
+    }	
+    image 
+   {
+     function			= BOX
+     state				= INSENSITIVE
+     file					= "buttons/button-ins.png"
+     border			= { 10, 10, 9, 9 }
+     stretch			= TRUE
+    }
+    image 
+    {
+      function			= BOX
+      file				= "buttons/button.png"		
+      border			= { 10, 10, 9, 9 }
+      stretch			= TRUE
+     }
+
+    image
+    {
+      function			= ARROW
+      state			= INSENSITIVE
+      recolorable		= TRUE
+      overlay_file		= "arrows/down_insensitive.png"
+      overlay_border		= { 0, 0, 0, 0 }
+      overlay_stretch		= FALSE
+      arrow_direction           = DOWN
+    }
+
+    image
+    {
+      function				= ARROW
+      state				= NORMAL
+      recolorable			= TRUE
+      overlay_file			= "arrows/down.png"
+      overlay_border			= { 0, 0, 0, 0 }
+      overlay_stretch			= FALSE
+      arrow_direction 			= DOWN
+    }
+  image
+    {
+      function				= ARROW
+      state				= PRELIGHT
+      recolorable			= TRUE
+      overlay_file			= "arrows/down_prelight.png"
+      overlay_border			= { 0, 0, 0, 0 }
+      overlay_stretch			= FALSE
+      arrow_direction 			= DOWN
+    }	
+  image
+    {
+      function				= ARROW
+      state				= ACTIVE
+      recolorable			= TRUE
+      overlay_file			= "arrows/down_ins.png"
+      overlay_border			= { 0, 0, 0, 0 }
+      overlay_stretch			= FALSE
+      arrow_direction 			= DOWN
+    }	
+  }
+}
+
+widget_class "*GtkComboBoxEntry.*" style "combobutton"
+widget_class "*GtkComboBoxEntry.GtkEntry" style "comboentry"
+widget_class "*GtkCombo.*" style "combobutton"
+widget_class "*GtkCombo.GtkEntry" style "comboentry"
+widget_class "*GtkCombo.GtkButton" style "combobutton"

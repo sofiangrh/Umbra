@@ -1,0 +1,137 @@
+style "range"
+{
+engine "pixmap"
+{
+	image
+	{
+
+		function	= FOCUS
+		file		= "/range/trough-horiz-focus.png"
+		border		= { 9 , 9 ,2 ,2}
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+	}
+
+	image
+	{
+
+		function	= BOX
+		#recolorable	= TRUE
+		#detail		= "trough"
+		file		= "/range/trough-horiz.png"
+		border		= { 9 , 9 ,2 ,2}
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+	}
+
+	image
+	{
+
+		function	= FOCUS
+		file		= "/range/trough-vert-focus.png"
+		border		= {2 ,2 ,9 ,9}
+		stretch		= TRUE
+		orientation	= VERTICAL
+	}
+
+
+	image
+	{
+
+		function	= BOX
+		#recolorable	= TRUE
+		#detail		= "trough"
+		file		= "/range/trough-vert.png"
+		border		= {2 ,2 ,9 ,9}
+		stretch		= TRUE
+		orientation	= VERTICAL
+	}
+
+	image
+	{
+
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "/range/null.png"
+		border		= { 0 , 0 ,0 ,0}
+		stretch		= TRUE
+		overlay_file	= "/range/slider-horiz.png"
+		overlay_stretch	= FALSE
+		orientation	= HORIZONTAL
+	}
+
+	image
+	{
+
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "/range/null.png"
+		border		= { 0 , 0 ,0 ,0}
+		stretch		= TRUE
+		overlay_file	= "/range/slider-horiz-prelight.png"
+		overlay_stretch	= FALSE
+		orientation	= HORIZONTAL
+	}
+
+	image
+	{
+
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		file		= "/range/null.png"
+		border		= { 0 , 0 ,0 ,0}
+		stretch		= TRUE
+		overlay_file	= "/range/slider-horiz.png"
+		overlay_stretch	= FALSE
+		orientation	= HORIZONTAL
+	}
+
+	image
+	{
+
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "/range/null.png"
+		border		= { 0 , 0 ,0 ,0}
+		stretch		= TRUE
+		overlay_file	= "/range/slider-vert.png"
+		overlay_stretch	= FALSE
+		orientation	= VERTICAL
+	}
+
+	image
+	{
+
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "/range/null.png"
+		border		= { 0 , 0 ,0 ,0}
+		stretch		= TRUE
+		overlay_file	= "/range/slider-vert-prelight.png"
+		overlay_stretch	= FALSE
+		orientation	= VERTICAL
+	}
+
+	image
+	{
+
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		file		= "/range/null.png"
+		border		= { 0 , 0 ,0 ,0}
+		stretch		= TRUE
+		overlay_file	= "/range/slider-vert.png"
+		overlay_stretch	= FALSE
+		orientation	= VERTICAL
+	}
+
+}
+
+}
+
